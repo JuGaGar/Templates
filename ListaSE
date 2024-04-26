@@ -1,0 +1,20 @@
+class Nodo:
+    def __init__(self,load):
+        self.carga = load
+        self.siguiente = None
+        
+class ListaSE:
+    def __init__(self):
+        self.pNodo = None
+        
+    def CrearLista(self,load):
+        nPA = Nodo(load) #nPA = nodoPorAñadir
+        self.pNodo = nPA
+        
+    def AñadirInicio(self,load):
+        if self.pNodo != None:
+            nPA = Nodo(load)
+            nPA.siguiente = self.pNodo
+            self.pNodo = nPA
+        else:
+            print("El árbol está vacío, por favor empezarlo con CrearLista(<Contenido del primero nodo>)")
